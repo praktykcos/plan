@@ -4,13 +4,18 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 
 const Navbar = () => {
-    const [hovered, setHovered] = useState(null);
+    const [hovered, setHovered] = useState<number | null>(null);
+    const [activeIndex, setActiveIndex] = useState<number | null>(null); // Состояние для активного элемента
 
     const menuItems = [
-        { name: 'Events', icon: '/events.png', path: '/' },
-        { name: 'Students', icon: '/student.png', path: '/students' },
-        { name: 'Teachers', icon: '/teacher.png', path: '/teachers' },
+        { name: 'Events', icon: '/event.svg', path: '/' },
+        { name: 'Students', icon: '/student.svg', path: '/students' },
+        { name: 'Teachers', icon: '/teacher.svg', path: '/teachers' },
     ];
+
+    const handleClick = (index: number) => {
+        setActiveIndex(index); // Устанавливаем активный элемент
+    };
 
     return (
         <nav>
@@ -22,17 +27,24 @@ const Navbar = () => {
                 <ul className='mt-[50px] ml-[70px] items-center'>
                     {menuItems.map((item, index) => {
                         const isHovered = hovered === index;
+                        const isActive = activeIndex === index; // Проверка на активный элемент
+
                         return (
                             <li
                                 key={index}
-                                className={`flex text-[18px] items-center pt-[12px] pb-[12px] pl-[5px] rounded-l-xl                                cursor-pointer transition-all duration-300 ${isHovered ? 'bg-white text-green-700' : 'text-white hover:bg-white hover:text-[#4CBC9A]'}`}
+                                onMouseEnter={() => setHovered(index)}
+                                onMouseLeave={() => setHovered(null)}
+                                onClick={() => handleClick(index)} // Обработчик клика
+                                className={`flex text-[18px] items-center pt-[12px] pb-[12px] pl-[5px] rounded-l-xl cursor-pointer transition-all duration-300 
+                                ${isActive ? 'bg-white text-[#4CBC9A]' : isHovered ? 'bg-white text-[#4CBC9A]' : 'text-white hover:bg-white hover:text-[#4CBC9A]'}`}
                             >
+                                {/* Inline SVG icon */}
                                 <Image
                                     src={item.icon}
                                     alt={item.name}
                                     width={35}
                                     height={35}
-                                    className='mr-[24px]'
+                                    className={`mr-[24px] transition-all duration-300 ${isActive ? 'text-[#4CBC9A]' : isHovered ? 'text-[#4CBC9A]' : 'text-white'}`} // Изменение цвета на основе активного состояния
                                 />
                                 <a href={item.path} className='w-full block p-2'>
                                     {item.name}
