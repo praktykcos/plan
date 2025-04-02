@@ -18,7 +18,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav>
+        <nav className='block'>
             <div className='w-[345px] h-screen bg-[#4CBC9A]'>
                 <div className='flex items-center text-[36px] font-bold pt-[50px] ml-[46px]'>
                     <Image src='/logo.svg' alt='' width={48} height={48} />
@@ -27,7 +27,7 @@ const Navbar = () => {
                 <ul className='mt-[50px] ml-[70px] items-center'>
                     {menuItems.map((item, index) => {
                         const isHovered = hovered === index;
-                        const isActive = activeIndex === index; // Проверка на активный элемент
+                        const isActive = activeIndex === index; // Проверка на активный элементWW
 
                         return (
                             <li
@@ -36,7 +36,7 @@ const Navbar = () => {
                                 onMouseLeave={() => setHovered(null)}
                                 onClick={() => handleClick(index)} // Обработчик клика
                                 className={`flex text-[18px] items-center pt-[12px] pb-[12px] pl-[5px] rounded-l-xl cursor-pointer transition-all duration-300 
-                                ${isActive ? 'bg-white text-[#4CBC9A]' : isHovered ? 'bg-white text-[#4CBC9A]' : 'text-white hover:bg-white hover:text-[#4CBC9A]'}`}
+                                ${isActive ? 'bg-[#F3F4FF] text-[#4CBC9A]' : isHovered ? 'bg-white text-[#4CBC9A]' : 'text-white hover:bg-[#F3F4FF] hover:text-[#4CBC9A]'}`}
                             >
                                 {/* Inline SVG icon */}
                                 <Image

@@ -28,8 +28,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
-        <Navbar />
+        <div className="flex">
+            <Navbar /> {/* Размещаем Navbar в левой части экрана */}
+            <main className="flex-grow">{children}</main> {/* Контент страниц */}
+        </div>
       </body>
     </html>
   );
