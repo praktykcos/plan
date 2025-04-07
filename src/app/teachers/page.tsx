@@ -1,10 +1,13 @@
+import Nav from '@/components/Nav';
+import Teacher from '@/components/Teacher'
 import React from 'react';
 
 const page = () => {
     return (
-        <div>
-            
-        </div>
+        <section className='bg-[#F3F4FF] h-full'>
+            <Nav />
+            <Teacher />
+        </section>
     );
 };
 
