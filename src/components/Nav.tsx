@@ -1,15 +1,15 @@
 import Image from "next/image";
 
-const Nav = () => {
+const Nav = ({nav}: {nav: string}) => {
     return (
         <section>
                <div className="flex items-center justify-between pt-[50px]">
-                    <h1 className="text-2xl mb-4 ml-[37px] text-[36px] font-bold text-[#303972]">Events</h1>
+                    <h1 className="text-2xl mb-4 ml-[37px] text-[36px] font-bold text-[#303972]">{nav}</h1>
                     <div className="flex">
                     
                     <div className="relative w-[350px] mr-[50px]">
                     <button className="absolute left-5 top-1/2 transform -translate-y-1/2">
-                        <img src="/search.png" alt="Search" className="w-6 h-6" />
+                        <Image src="/search.png" alt="Search" className="w-6 h-6" width={6} height={6} />
                     </button>
                     <input
                         type="text"

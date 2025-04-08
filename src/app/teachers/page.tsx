@@ -5,7 +5,7 @@ import React from 'react';
 const page = () => {
     return (
         <section className='bg-[#F3F4FF] h-full'>
-            <Nav />
+            <Nav nav={'Teachers'} key='2'/>
             <Teacher />
         </section>
     );
