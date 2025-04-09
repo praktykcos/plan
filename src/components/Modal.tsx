@@ -1,30 +1,49 @@
-import Image from "next/image"
+import Image from "next/image";
 
-const Modal = () => {
-    return (
-        <div className="absolute w-[800px] h-[500px] bg-white top-0 ">
-            <div className="mt-[10px] ml-[40px]">
-                <div>
-                    <button><img src="" alt="" /></button>
-                    <button><img src="" alt="" /></button>
-                </div>
-                <div className="flex items-center">
-                    <Image src="/modal.jpg" alt="" width={250} height={250} className="rounded-full border-4 border-black" />
-                    <div className="ml-[30px] ">
-                        <p className="text-[30px]">Name: Mike</p>
-                        <p className="text-[30px]">Surname: Djon</p>
-                    </div>
-                </div>
-                <ul className="text-[20px] mt-[30px]">
-                    <li>STATUS: <span className="text-[#1FC125]">WORK</span></li>
-                    <li>PESEL: 1111111111111</li>
-                    <li>Object: Education</li>
-                    <li>Start: 2025</li>
-                    <li>End: Present</li>
-                </ul>
-            </div>
+const Modal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 bg-black/50 flex justify-center items-center z-50">
+      <div className="bg-white p-8 rounded-lg w-[800px] h-[550px] relative">
+        {/* Кнопка закрытия модалки */}
+        <button onClick={onClose} className="absolute top-4 right-4">
+          <Image src="/close-modal.png" alt="Close" width={20} height={20} />
+        </button>
+
+        {/* Кнопка редактирования */}
+        <button className="absolute top-4 right-14">
+          <Image src="/edit-modal.png" alt="Edit" width={20} height={20} />
+        </button>
+
+        {/* Контент модалки */}
+        <div className="flex items-center mt-6">
+          <Image
+            src="/modal.jpg"
+            alt="Teacher"
+            width={250}
+            height={250}
+            className="rounded-full border-4 border-black"
+          />
+          <div className="ml-6">
+            <p className="text-2xl font-bold">Name: Mike</p>
+            <p className="text-2xl font-bold">Surname: Djon</p>
+          </div>
         </div>
-    )
-}
 
-export default Modal
+        {/* Список информации */}
+        <ul className="text-[15px] mt-8 space-y-3">
+          <li>
+            STATUS: <span className="text-[#1FC125]">WORK</span>
+          </li>
+          <li>PESEL: 1111111111111</li>
+          <li>Object: Education</li>
+          <li>Start: 2025</li>
+          <li>End: Present</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default Modal;

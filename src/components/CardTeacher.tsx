@@ -1,10 +1,20 @@
 import Image from "next/image";
-import '../app/style/globals.css'
+import Modal from './Modal';
+import { useState } from "react";
 
 const CardTeacher = () => {
+    const [isModalOpen, setModalOpen] = useState(false);
+
+    const openModal = () => setModalOpen(true);
+    const closeModal = () => setModalOpen(false);
+
   return (
-    <div className="w-[250px] h-[352px] bg-white bg-white rounded-[20px] overflow-hidden">
-      <div className="flex flex-col items-center p-4 mt-[32px]">
+    <div className="relative w-[250px] h-[352px] bg-white rounded-[20px] overflow-hidden" >
+      {/* Модалка, которая открывается при клике на карточку */}
+      <Modal isOpen={isModalOpen} onClose={closeModal} />
+
+      {/* Контент карточки */}
+      <div className="flex flex-col items-center p-4 mt-[32px]" onClick={openModal}>
         <Image
           src="/teacher.jpg"
           alt="Teacher"
