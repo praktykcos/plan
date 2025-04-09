@@ -10,12 +10,11 @@ const CardTeacher = () => {
 
   return (
     <div className="relative w-[250px] h-[352px] bg-white rounded-[20px] overflow-hidden" >
-      {/* Модалка, которая открывается при клике на карточку */}
       <Modal isOpen={isModalOpen} onClose={closeModal} />
 
-      {/* Контент карточки */}
-      <div className="flex flex-col items-center p-4 mt-[32px]" onClick={openModal}>
-        <Image
+      <div className="flex flex-col items-center p-4 mt-[32px]">
+        <Image  
+          onClick={openModal}
           src="/teacher.jpg"
           alt="Teacher"
           width={120}

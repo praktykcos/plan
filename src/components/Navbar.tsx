@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 const Navbar = () => {
     const [hovered, setHovered] = useState<number | null>(null);
-    const [activeIndex, setActiveIndex] = useState<number | null>(null); // Состояние для активного элемента
+    const [activeIndex, setActiveIndex] = useState<number | null>(null); 
 
     const menuItems = [
         { name: 'Events', icon: '/event.svg', path: '/' },
@@ -14,7 +14,7 @@ const Navbar = () => {
     ];
 
     const handleClick = (index: number) => {
-        setActiveIndex(index); // Устанавливаем активный элемент
+        setActiveIndex(index); 
     };
 
     return (
@@ -38,7 +38,6 @@ const Navbar = () => {
                                 className={`flex text-[18px] items-center pt-[12px] pb-[12px] pl-[5px] rounded-l-xl cursor-pointer transition-all duration-300 
                                 ${isActive ? 'bg-[#F3F4FF] text-[#4CBC9A]' : isHovered ? 'bg-white text-[#4CBC9A]' : 'text-white hover:bg-[#F3F4FF] hover:text-[#4CBC9A]'}`}
                             >
-                                {/* Inline SVG icon */}
                                 <Image
                                     src={item.icon}
                                     alt={item.name}
