@@ -22,6 +22,7 @@ header{
 }
 body, html{
     margin: 0;
+    background-color: rgb(252, 252, 252);
 }
 .btn{
     cursor: pointer;
