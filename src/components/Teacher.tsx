@@ -16,7 +16,6 @@ const Teachers = () => {
                 <CardTeacher />
                 
             </div>
-            <Modal />
         </section>
     );
 };
