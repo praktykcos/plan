@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import CardTeacher from './CardTeacher';
 import ModalTeacher from './ModalTeacher';
+import PaginationTeacher from './PaginationTeacher';
 
 
 
@@ -33,11 +34,15 @@ const Teachers = () => {
                 <CardTeacher />
                 <CardTeacher />
                 <CardTeacher />
+                <CardTeacher />
+                <CardTeacher />
+                <CardTeacher />
+                <CardTeacher />
             </div>
             <ModalTeacher inOpen={isModalOpen} onClose={closeModal}  />
+            <PaginationTeacher />
         </section>
 
-        
     );
 };
 
