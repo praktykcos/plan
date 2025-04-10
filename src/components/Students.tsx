@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import ModalStudent from './ModalStudent';
 import StudentCard from './StudentCard';
+import Pagination from './Pagination';
 
 const Students = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -104,6 +105,7 @@ const Students = () => {
             ))}
           </div>
         </div>
+        <Pagination />
       </div>
     </section>
   );
