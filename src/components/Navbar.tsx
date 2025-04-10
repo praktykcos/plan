@@ -19,7 +19,7 @@ const Navbar = () => {
 
     return (
         <nav className='block'>
-            <div className='w-[345px] h-[1295px] bg-[#4CBC9A]'>
+            <div className='w-[345px] h-[1150px] bg-[#4CBC9A]'>
                 <div className='flex items-center text-[36px] font-bold pt-[50px] ml-[46px] '>
                     <a href="/"><Image src='/logo.png' alt='' width={50} height={50} className='rounded-[10px] cursor-pointer' /></a>
                     <h1 className='ml-[16px] text-white '>Cosinus</h1>

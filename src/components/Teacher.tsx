@@ -29,6 +29,10 @@ const Teachers = () => {
                 <CardTeacher />
                 <CardTeacher />
                 <CardTeacher />
+                <CardTeacher />
+                <CardTeacher />
+                <CardTeacher />
+                <CardTeacher />
             </div>
             <ModalTeacher inOpen={isModalOpen} onClose={closeModal}  />
         </section>
